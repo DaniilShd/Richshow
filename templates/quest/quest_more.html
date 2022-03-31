@@ -1,0 +1,224 @@
+{{ define "quest_more" }} {{ template "header" }}
+
+<!-- Animation more start -->
+<main class="main" data-chapter="5">
+    <section class="benefits margin_top_more">
+        <div class="benefits_wrapper">
+            <div class="animation_more_card">
+
+                <!-- Модальное окно с всплывающей формой обратной связи -->
+
+
+                <!-- Modal -->
+                {{ template "modul" }}
+                <!-- Карточка с подробным описанием программы start (Animation program more) -->
+
+                <div class="row middle-sm">
+                    <div class="col-md-6 col-sm-6 col-xs-12 padding_zero">
+                        <div id="carouselStockAnimationMore" class="carousel carousel_animation_more slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active" data-bs-interval="3500">
+
+                                    <img class="carusel_picture_more" src="/static/img/quest/{{ .Id }}/{{ .Photo_first }}" class="d-block w-100 pic_animation_more_img" alt="">
+
+                                </div>
+                                {{ range .Photo_url_add }}
+                                <div class="carousel-item" data-bs-interval="3500">
+                                    <img class="carusel_picture_more" src="/static/img/quest/{{ .Id_add }}/{{ .Photo_url }}" class="d-block w-100 pic_animation_more_img" alt="">
+                                </div>
+                                {{ end }}
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselStockAnimationMore" data-bs-slide="prev">
+                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                   <span class="visually-hidden">Previous</span>
+                 </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselStockAnimationMore" data-bs-slide="next">
+                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                   <span class="visually-hidden">Next</span>
+                 </button>
+                        </div>
+                        <!--<div class="pic_animation_more">
+                 <img class = "pic_animation_more_img" src="../../static/img/animation/show_puziri.jpg" alt="123">
+               </div>-->
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 center-xs table_title">
+                        <div class="table_title_more">
+                            <div class="row">
+                                <div class="col-xs-12 name_program_animation text_padding_animation">
+                                    {{ .Name }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-3 text_padding_animation middle-xs">
+                                    <p>{{ .Price }} руб.</p>
+                                </div>
+                                <div class="col-md-4 col-xs-3 text_padding_animation middle-xs">
+                                    <p><img class="time_animation" src="/static/img/svg/carbon_time.svg" alt="">&nbsp;{{ .Duration }} мин</p>
+                                </div>
+                                <div class="col-md-4 col-xs-6 text_padding_animation">
+                                    <p><img class="face_animation" src="/static/img/svg/baby_boy.png" alt="">&nbsp;от {{ .Child_count_min }} до {{ .Child_count_max }} лет</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row start-xs padding_zero text_animation_more">
+                            {{ .Full_description }}
+                        </div>
+                        <div class="row animation_button_more ">
+                            <div class="col-xs-12 middle-xs bottom-xs">
+
+                                <!-- !!!!вариант с кнопкой !!!!!!!!-->
+                                <div class="row">
+                                    <div class="col-xs-6 center-xs">
+                                        <input type="button" class="animation_button btn btn-primary" onclick="history.back();" value="Назад" />
+                                    </div>
+                                    <div class="col-xs-6 center-xs">
+                                        <button type="button" class="animation_button btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Заказать
+                     </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="container_animation_more">
+                            <div class="row">
+                                {{ if (eq .Video_url "видео нет" ) }}
+                                <div class="col-md-12">
+                                    <div class="row center-xs">
+                                        <div class="title_text_animation_desc">
+                                            Дополнительно к программе
+                                        </div>
+                                        <div class="list_animation_more start-xs">
+                                            <ul style="list-style: disc">
+                                                {{ range .Add_service }} {{ if (eq .Category_id "1" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/animation_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ else if (eq .Category_id "2" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/show_programs/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ else if (eq .Category_id "3" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/master_class_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ else if (eq .Category_id "4" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/quest/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ else if (eq .Category_id "5" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/add_services/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ end }} {{ end }}
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {{ else }}
+                                <div class="col-md-6">
+                                    <div class="row center-xs">
+                                        <div class="title_text_animation_desc">
+                                            Дополнительно к программе
+                                        </div>
+                                        <div class="list_animation_more start-xs">
+                                            <ul style="list-style: disc">
+                                                {{ range .Add_service }} {{ if (eq .Category_id "1" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/animation_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ else if (eq .Category_id "2" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/show_programs/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ else if (eq .Category_id "3" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/master_class_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ else if (eq .Category_id "4" ) }} 
+                                                <li class="li_animation_more"><a class="extra_services" href="/quest/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ else if (eq .Category_id "5" ) }}
+                                                <li class="li_animation_more"><a class="extra_services" href="/add_services/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                {{ end }} {{ end }}
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 padding_top_bottom">
+                                    <div class="videos">
+                                        <div class="video_wrapper">
+                                            <div class="video_item">
+                                                <iframe class="video_element" src="{{ .Video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<button type="button" class="animation_button btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+             Заказать
+           </button>-->
+
+                <!-- Карточка с подробным описанием программы end (Animation program more) -->
+
+            </div>
+
+            <div class="instruction">
+                <div class="instruction_title">
+                    Как заказать праздник
+                </div>
+                <div class="row center-xs">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="row center-xs middle-xs">
+                            <div class="col-sm-3 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            1
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Выберите программу
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            2
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Оставьте заявку на сайте
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            3
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Согласуйте дату и место с менеджером
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kontur">
+                    <div class="kontur_pink"></div>
+                </div>
+            </div>
+
+            {{ template "form_footer" }}
+
+        </div>
+
+    </section>
+
+
+    <!-- Animation end -->
+</main>
+
+{{ template "footer" }} {{ end }}

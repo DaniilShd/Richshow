@@ -1,0 +1,178 @@
+{{ define "about_us" }} {{ template "header" }}
+
+<!-- Intro start -->
+<main class="main" data-chapter="7">
+    <section class=" intro ">
+        <div class="wrapper ">
+
+            <!-- <div class="title_about_us "></div> -->
+            <div class="row middle-xs bottom-xs ">
+                <div class="carouselStock_intro col-xs-12 ">
+
+
+
+                    <!-- Форма обратной связи -->
+
+                    <div class="hidden_all col-lg-4 col-md-5 col-sm-7 col-xs-12 ">
+                        <div class="row center-xs ">
+                            <form method="POST " action="/post_information " class="search-form " autocomplete="off " id="form ">
+                                <fieldset class="search-form_wrap ">
+                                    <p class="form_title_up ">Рассчитать праздник</p>
+                                    <div class="search-form_info ">
+                                        <div class="input_frame ">
+                                            <input class="search-form_field " type="text " name="name " value=" " placeholder="Ваше имя " id="name ">
+                                            <input class="search-form_field " type="text " name="tel " onmouseover="chek_tel() " value=" " required maxlength="12 " placeholder="Номер телефона " id="tel ">
+                                        </div>
+                                        <div class="check ">
+                                            <div class="politica_check ">
+                                                <input type="checkbox " checked="checked " onchange="fun_check() " name="form_application " value="yes " id="check_form_intro ">
+                                                <label for="check_form_intro "></label>
+                                                <div class="politica ">
+                                                    <p class="check_text ">Я согласен на обработку персональных данных</p>
+                                                    <p class="check_text_desc "><a class="check_text_desc_a " href="!# ">Политика конфиденциальности</a></p>
+                                                </div>
+                                            </div>
+                                            <button class="search-form_submit search-form_submit_active " type="submit " name=" " id="button_form_intro ">Отправить</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <!--
+                <div class="cirk col-lg-6">
+                    <div class="row end-xs">
+                        <div class="cirk_pic">
+                            <img src="/static/img/cirk.png" alt="Детские шоу">
+                        </div>
+                    </div>
+                </div>
+                
+                <script type="text/javascript">
+                    const cirk = document.querySelector('.cirk');
+
+                    if (window.innerWidth <= 1200) {
+                        cirk.classList.add('hidden_all');
+                    } else {
+                        cirk.classList.remove('hidden_all');
+                    }
+                </script>
+                -->
+
+                <div class="col-xs-10">
+                    <div class="row end-xs ">
+                        <div class="feya-pic ">
+                            <img src="/static/img/din-din-min.png " alt="Детские шоу ">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Intro end -->
+
+    <!-- Benefits start -->
+
+    <section class="benefits ">
+        <div class="benefits_wrapper ">
+
+
+            <!-- <div class="baner_about_us ">
+
+            </div> -->
+
+            <h1 class="benefits_title">Пару слов о "Рич Шоу "!</h1>
+
+            <div class="text_about_us">
+                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit corporis non velit magni atque culpa, facere cum odio ducimus, cupiditate dolorum aspernatur sint consequatur distinctio commodi qui? Qui, nesciunt nam.</div>
+            </div>
+
+
+            <div class="video_wrapper_about_us ">
+                <div class="video_item_about_us "></div>
+                <iframe class="video_element_about_us " src="https://www.youtube.com/embed/dYnKn7_Tg58 " title="YouTube video player " frameborder="0 " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
+            </div>
+            <div class="bottom_about_us"></div>
+
+
+            <div class="instruction ">
+                <div class="instruction_title ">
+                    Как заказать праздник
+                </div>
+
+                <div class="row center-xs ">
+                    <div class="col-xs-12 col-sm-12 ">
+                        <div class="row center-xs middle-xs ">
+                            <div class="col-sm-3 col-xs-12 ">
+                                <div class="row ">
+                                    <div class="flex_pointer ">
+                                        <div class="row center-xs middle-xs point_number ">
+                                            1
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text ">
+                                            Выберите программу
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12 ">
+                                <div class="row ">
+                                    <div class="flex_pointer ">
+                                        <div class="row center-xs middle-xs point_number ">
+                                            2
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text ">
+                                            Оставьте заявку на сайте
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-xs-12 ">
+                                <div class="row ">
+                                    <div class="flex_pointer ">
+                                        <div class="row center-xs middle-xs point_number ">
+                                            3
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text ">
+                                            Согласуйте дату и место с менеджером
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kontur ">
+                    <div class="kontur_pink "></div>
+                </div>
+            </div>
+
+            {{ template "form_footer" }}
+
+
+
+        </div>
+        <div class="animation_wave ">
+            <div class="wave_1 "></div>
+            <div class="wave_2 "></div>
+        </div>
+    </section>
+
+
+
+    <!-- Benefits end -->
+
+
+</main>
+
+{{ template "footer" }} {{ end }}

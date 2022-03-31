@@ -1,0 +1,245 @@
+{{ define "create_article" }}
+
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/flexboxgrid.min.css">
+    <meta name="description" content="Агентство детских праздников Рич Шоу">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../static/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../static/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../static/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../../static/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../../static/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#9f00a7">
+    <meta name="msapplication-config" content="../../static/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../../static/css/fontawesome.css">
+    <link rel="stylesheet" href="../../static/css/style.css?v=1.0">
+    <script src="https://kit.fontawesome.com/bfec3f4f59.js" crossorigin="anonymous"></script>
+
+    <title>Агентство детских праздников "Рич Шоу"</title>
+</head>
+
+
+
+
+<body>
+    <!-- Header start -->
+    <!--  <header class="header" id = "header">
+        <div class="wrapper">
+          <div class="row middle-xs">
+            <div class="box_left_header col-md-5 col-sm-4 col-xs-5">
+              <div class="row middle-xs start-xs">
+                <div class="header-logo col-md-4 col-sm-5 col-xs-4">
+                  <a class="" href="/">
+                    <img src="../../static/img/svg/header-logo.png" alt="Агентство праздников Рич Шоу" class="header-logo-pic">
+                  </a>
+                </div>
+                <div class="text_town col-md-8 col-sm-7 col-xs-8">
+                  <p>г. Москва и МО</p>
+                </div>
+              </div>
+              </div>
+            <div class="box_right_header col-md-7 col-sm-8 col-xs-7">
+              <div class="row middle-xs end-xs">
+                <div class="box_email_header col-md-7 col-sm-7 col-xs-12">
+                    <div class="adres_email">
+                      <a href="mailto:info@rich-show.ru"><i class="far fa-envelope"></i>&nbspinfo@rich-show.ru</a>
+                    </div>
+                    <div class="adres_desc">
+                      <p>напишите нам</p>
+                    </div>
+                </div>
+                <div class="phone_number_header end-xs col-md-5 col-sm-5 col-xs-12">
+                  <div class="soc_seti">
+                    <a href="https://www.instagram.com/rich_show_msc"><i class="soc_seti_active soc_seti_instagram fab fa-instagram" style="cursor: pointer;"></i></a>&nbsp&nbsp
+                    <a href="https://t.me/aleksandra_rich"><i class="soc_seti_active soc_seti_telegram fab fa-telegram" style="cursor: pointer;"></i></a>&nbsp&nbsp
+                    <a href="https://api.whatsapp.com/send?phone=79176544174"><i class="soc_seti_active soc_seti_whatsapp fab fa-whatsapp" style="cursor: pointer;"></i></a>&nbsp&nbsp
+                  </div>
+                  <div class="phone_number">
+                      <a href="tel:+79176544174">+7 917-654-41-74</a>
+                  </div>
+                  <div class="phone_desc">
+                    <p>ежедневно с 9:00 до 23:00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>-->
+    <!-- Header for desktop-->
+
+    <!--  <div class="header_menu" id = "header_menu">
+          <div class="menu_wrapper">
+            <nav class="header_nav">
+             <ul class="topmenu">
+               <li class="topmenu_item">
+                 <a href="#interior" class="menu_link"  id = "menu_link_hidden">Готовые праздники</a>
+               </li>
+               <li class="topmenu_item">
+                 <a href="#place" class="menu_link">Шоу-программы</a>
+               </li>
+               <li class="topmenu_item">
+                 <a href="#time" class="menu_link">Мастер-классы</a>
+               </li>
+               <li class="topmenu_item">
+                 <a href="#time" class="menu_link">Доп. услуги</a>
+               </li>
+               <li class="topmenu_item">
+                 <a href="#time" class="menu_link">Квесты</a>
+               </li>
+               <li class="topmenu_item">
+                 <a href="#time" class="menu_link">О нас</a>
+               </li>
+             </ul>
+            </nav>
+          </div>
+      </div>
+    </header>-->
+
+
+
+    <!-- Header end -->
+
+    <!-- Форма для записи постов -->
+
+    <main class="inner cover wrapper">
+        <h1 class="cover-heading" style="margin-top: 40px">Форма добавления программы</h1>
+        <form class="form_post" action="/admin/save_article/" method="post" enctype="multipart/form-data">
+
+            <input class="form-control" type="text" name="name" autocomplete="off" placeholder="Введите название программы" required><br>
+
+
+            <select class="form-select" name="category_id" aria-label="Default select example" required>
+      <option value="1" selected>Анимация</option>
+      <option value="2">Шоу программы</option>
+      <option value="3">Мастер-классы</option>
+      <option value="4">Квесты</option>
+      <option value="5">Доп. услуги</option>
+    </select><br>
+
+            <h5>Программа является хитом сезона?</h5>
+            <select class="form-select" name="hit_season" aria-label="Default select example" required>
+      <option value="0" selected>Нет</option>
+      <option value="1">Да</option>
+    </select><br>
+
+
+            <h5>Возрастное ограничение (для анимационных программ)</h5>
+            <select class="form-select" name="child_age_range_id" aria-label="Default select example" required>
+      <option selected></option>
+      <option value="1">1-3</option>
+      <option value="2">4-6</option>
+      <option value="3">7-9</option>
+      <option value="4">10-14</option>
+      <option value="5">на свадьбу</option>
+      <option value="6">для взрослых</option>
+    </select><br>
+
+
+            <textarea style="height: 250px" class="form-control" type="text" name="full_description" autocomplete="off" placeholder="Введите полный текст программы" required></textarea><br>
+
+            <textarea style="height: 150px" class="form-control" type="text" name="short_description" autocomplete="off" placeholder="Введите короткий текст программы" required></textarea><br>
+
+
+            <div class="forma_border">
+                <h5>Добавление фотографий</h5>
+                <div class="mb-3">
+                    <input class="form-control" type="file" name="photo" multiple accept="image/*" id="file" required>
+                </div>
+                <br>
+            </div>
+
+            <div class="forma_border">
+                <span id="table_1">
+        <table border=0 cellspacing=0 cellpadding=2 style="width: 100%">
+          <tr><td><h5>Добавление дополнительный предложений</h5></td><td>
+            <button type="button" class="btn btn-success" onclick="return addlineP();" style="margin-bottom: 15px">Добавить</button></td></tr>
+            <tr id="newlineP" nomer="[0]">
+              <td>
+                <select class="form-select" name = "extra_services_id" aria-label="Default select example">
+
+                {{ range . }}
+                  {{ if (eq .Category "1") }}
+                  <option value="{{ .Id }}">{{ .Name }} (1-3)</option>
+                  {{ else if (eq .Category "2") }}
+                  <option value="{{ .Id }}">{{ .Name }} (4-6)</option>
+                  {{ else if (eq .Category "3") }}
+                  <option value="{{ .Id }}">{{ .Name }} (7-9)</option>
+                  {{ else if (eq .Category "4") }}
+                  <option value="{{ .Id }}">{{ .Name }} (10-14)</option>
+                  {{ else if (eq .Category "5") }}
+                  <option value="{{ .Id }}">{{ .Name }} (на свадьбу)</option>
+                  {{ else if (eq .Category "6") }}
+                  <option value="{{ .Id }}">{{ .Name }} (для взрослых)</option>
+                  {{ end }}
+                  {{ end }}
+                </select><br>
+              </td>
+              <td class="btn btn-warning" valign="top" onclick="return rmlineP(0);" style="margin-left: 35px">Удалить</td></tr></table>
+</span><br>
+            </div>
+
+            <div class="forma_border">
+                <h5>Видео из ютюб(Ели видео пока нет впиать фразу "видео нет")</h5>
+                <textarea style="height: 100px" class="form-control" type="text" name="video" autocomplete="off" placeholder="Введите код для вставки видео с ютюб" required></textarea><br>
+            </div>
+
+
+            <div class="forma_border">
+                <h5>Стоимость </h5>
+                <input class="form-control" type="text" name="price" autocomplete="off" placeholder="Введите стоимость программы" required><br>
+            </div>
+
+            <div class="forma_border">
+                <h5>Укажите возраст детей</h5>
+                <div class="row">
+                    <div class="col-xs-1 end-xs">
+                        <h6>от</h6>
+                    </div>
+                    <div class="col-xs-1">
+                        <input class="form-control" type="text" name="child_count_min" autocomplete="off" placeholder="" required>
+                    </div>
+                    <div class="col-xs-1 end-xs">
+                        <h6>до</h6>
+                    </div>
+                    <div class="col-xs-1">
+                        <input class="form-control" type="text" name="child_count_max" autocomplete="off" placeholder="" required>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="forma_border">
+                <h5>Время проведения программы в минутах</h5>
+                <input class="form-control" type="text" name="duration" autocomplete="off" placeholder="Введите время проведения программы в минутах" required><br>
+            </div>
+
+            <div class="row end-xs">
+                <div class="col-xs-4">
+                    <button class="btn btn-primary" type="submit" style="margin-bottom: 35px"><h5>Выложить программу на сайт</h5></button>
+                </div>
+            </div>
+        </form>
+
+    </main>
+
+    <!-- Конец формы для записи постов -->
+
+    <!-- Footer start -->
+
+
+</body>
+
+<script src="/static/js/create.js"></script>
+
+
+</html>
+
+{{ end }}

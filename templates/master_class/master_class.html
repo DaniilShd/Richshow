@@ -1,0 +1,210 @@
+{{ define "master_class" }} {{ template "header" }}
+
+
+<!-- Intro start -->
+<main class="main" data-chapter="{{ .Category_id }}">
+    <section class="intro">
+        <div class="wrapper">
+            <div class="row middle-xs bottom-xs">
+
+                <!-- Форма обратной связи -->
+
+                <div class="hidden_all col-lg-4 col-md-5 col-sm-7 col-xs-12">
+                    <div class="row center-xs">
+                        <form class="search-form" autocomplete="off" id="form">
+                            <fieldset class="search-form_wrap">
+                                <p class="form_title_up">Рассчитать праздник</p>
+                                <div class="search-form_info">
+                                    <div class="input_frame">
+                                        <input class="search-form_field" type="text" name="name" value="" placeholder="Ваше имя" id="name">
+                                        <input class="search-form_field _tel" type="text" name="tel" value="" required placeholder="Номер телефона" id="tel">
+                                    </div>
+                                    <div class="check">
+                                        <div class="politica_check">
+                                            <input type="checkbox" checked="checked" onchange="fun_check()" name="form_application" value="yes" id="check_form_intro">
+                                            <label for="check_form_intro"></label>
+                                            <div class="politica">
+                                                <p class="check_text">Я согласен на обработку персональных данных</p>
+                                                <p class="check_text_desc"><a class="check_text_desc_a" href="!#">Политика конфиденциальности</a></p>
+                                            </div>
+                                        </div>
+                                        <button class="search-form_submit search-form_submit_active" type="submit" name="" id="button_form_intro">Отправить</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="hidden_all col-lg-12 col-md-12 col-xs-12">
+                    <div class="row end-xs">
+                        <div class="feya-pic">
+                            <img src="/static/img/din-din-min.png" alt="Детские шоу">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+    </section>
+
+    <!-- Intro end -->
+
+    <!-- Animation start -->
+
+    <section class="benefits">
+        <div class="benefits_wrapper">
+            <div class="button_green"></div>
+            <div class="button_pink"></div>
+            <h2 class="benefits_title">
+                Мастер-классы
+            </h2>
+            <div class="main_animation_desc">
+                <p class="desc_animation">Стоимость программы рассчитана на 10 человек и не уменьшается при меньшем количестве участников</p>
+                <p class="desc_animation">Стоимость оплаты каждого последующего участника уточняйте у менеджера.</p>
+
+            </div>
+            <div class="benefit_cards">
+
+
+                <!-- Модальное окно с всплывающей формой обратной связи -->
+
+                <!-- Button trigger modal -->
+
+                <!-- Modal -->
+
+                {{ template "modul" }}
+
+
+                <!-- Карточка с анимационной программой #1 -->
+
+                <div class="row padding_zero">
+                    {{ range .Masterclass_cards }}
+                    <div class="col-md-4 col-sm-6 col-xs-12 padding_zero">
+                        
+                        <div class="row padding_zero box_program">
+                            <div class="col-xs-12 padding_zero">
+                                <div class="row padding_zero">
+                                    <div class="pic_program_container padding_zero" onclick="document.location='/master_class_years/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
+                                        <div class="col-xs-12 pic-program">
+                                            <img loading="lazy" class="pic-program_img" src="/static/img/master_class/{{ .Id }}/{{ .Photo_url }}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 center-xs" onclick="document.location='/master_class_years/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
+                                        <div class="name_program">
+                                            {{ .Name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12" onclick="document.location='/master_class_years/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
+                                        <div class="text_desc_program">
+                                            &ensp;&ensp;{{ .Short_description }}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="row" onclick="document.location='/master_class_years/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
+                                            <div class="col-xs-12 end-xs padding_zero">
+                                                <div class="flex_price_program">
+                                                    <p class="price_program ">{{ .Price }}&nbsp;<img class="ruble" src="/static/img/svg/ruble.svg" alt=""></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row padding_zero button_group_program center-xs">
+                                            <div class="col-xs-6 padding_zero">
+                                                <button type="button" onclick="document.location='/master_class_years/{{ .Child_age_range_id }}/card/{{ .Id }}/'" class="animation_button btn btn-primary">
+                             Подробнее
+                           </button>
+                                            </div>
+                                            <div class="col-xs-6 padding_zero">
+                                                <button type="button" class="animation_button btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                             Заказать
+                           </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    {{ end }}
+                </div>
+
+                <!-- Карточка с анимационной программой #1 end-->
+
+            </div>
+
+            <div class="instruction">
+                <div class="instruction_title">
+                    Как заказать праздник
+                </div>
+
+                <div class="row center-xs">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="row center-xs middle-xs">
+                            <div class="col-sm-3 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            1
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Выберите программу
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            2
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Оставьте заявку на сайте
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            3
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Согласуйте дату и место с менеджером
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kontur">
+                    <div class="kontur_pink"></div>
+                </div>
+            </div>
+
+            {{ template "form_footer" }}
+
+
+
+        </div>
+        <div class="animation_wave">
+            <div class="wave_1"></div>
+            <div class="wave_2"></div>
+        </div>
+    </section>
+
+
+
+    <!-- Animation end -->
+
+</main>
+
+
+
+
+<!-- Footer start -->
+
+{{ template "footer" }} {{ end }}

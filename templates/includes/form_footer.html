@@ -1,0 +1,52 @@
+{{ define "form_footer"}}
+
+<form class="benefit_search-form" autocomplete="off" id="form_benefit" method="POST" action="/post_information/">
+    <fieldset class="row benefit_search-form_wrap">
+        <div class="row center-xs middle-xs">
+            <div class="col-sm-2">
+                <img src="/static/img/svg/confetti_white.svg" class="confetti_black">
+            </div>
+            <div class="col-sm-8 col-xs-12">
+                <div class="row center-xs">
+                    <p class="benefit_form_title">Поможем организовать любой праздник</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <input class="benefit_search-form_field" type="text" name="name" value="" placeholder="Ваше имя" id="name_benefit" required>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <input inputmode="numeric" class="benefit_search-form_field _tel" type="text" name="tel" value="" placeholder="Номер телефона" id="tel_benefit" required>
+                    </div>
+
+                    <input type="hidden" name="utm_source" id="property_utm_source_3">
+                    <input type="hidden" name="utm_medium" id="property_utm_medium_3">
+                    <input type="hidden" name="utm_campaign" id="property_utm_campaign_3">
+                    <input type="hidden" name="utm_content" id="property_utm_content_3">
+                    <input type="hidden" name="utm_term" id="property_utm_term_3">
+
+                    <div class="col-sm-4 col-xs-12">
+                        <button class="benefit_search-form_submit" type="submit" name="" id="benefit_button_form" disabled>Отправить</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 benefit_check">
+                        <div class="flex_check">
+                            <input type="checkbox" onchange="fun_check_benefit()" class="form-checkbox" name="form_application" value="yes" id="check_form_benefit">
+                            <label for="check_form_benefit"></label>
+                            <p class="benefit_check_text">Я согласен на обработку персональных данных</p>
+                        </div>
+                        <p class="benefit_check_text_desc"><a class="benefit_check_text_desc_a" href="/privacy_policy/">Политика конфиденциальности</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <img src="/static/img/svg/paper_plane.svg" fill="#fff" class="paper_plane">
+            </div>
+        </div>
+    </fieldset>
+    <div class="kontur_line_green">
+        <div class="kontur_green"></div>
+    </div>
+</form>
+
+{{ end }}

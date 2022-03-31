@@ -1,0 +1,98 @@
+<form class="form_post" action="https://webhook.site/6bf032ff-da6a-489d-b5a4-e17fdee946be" method="post" enctype="multipart/form-data">
+
+  <input class = "form-control" type="text" name="title" autocomplete="off"
+  placeholder ="Введите название программы" ><br>
+
+
+  <select class="form-select" name = "show_category" aria-label="Default select example">
+    <option value="Анимация" selected>Анимация</option>
+    <option value="Шоу программы">Шоу программы</option>
+    <option value="Мастер-классы">Мастер-классы</option>
+    <option value="Квесты">Квесты</option>
+    <option value="Доп. услуги">Доп. услуги</option>
+  </select><br>
+
+
+  <h5>Возрастное ограничение (для анимационных программ)</h5>
+  <select class="form-select" name = "child_age" aria-label="Default select example">
+    <option selected></option>
+    <option value="0-4">0-4</option>
+    <option value="5-7">5-7</option>
+    <option value="8-10">8-10</option>
+    <option value="11-13">11-13</option>
+  </select><br>
+
+
+  <textarea style="height: 250px" class = "form-control" type="text" name="full_text" autocomplete="off"
+  placeholder ="Введите полный текст программы" ></textarea><br>
+
+  <textarea style="height: 150px" class = "form-control" type="text" name="short_text" autocomplete="off"
+  placeholder ="Введите короткий текст программы" ></textarea><br>
+
+
+<div class="forma_border">
+        <h5>Добавление фотографий</h5>
+            <div class="mb-3">
+              <input class="form-control" type="file" name = "photo" multiple accept="image/*" id = "file">
+            </div>
+<br>
+</div>
+
+<div class="forma_border">
+<span id="table_1">
+      <table border=0 cellspacing=0 cellpadding=2 style="width: 100%">
+        <tr><td><h5>Добавление дополнительный предложений</h5></td><td>
+          <button type="button" class="btn btn-success" onclick="return addlineP();" style="margin-bottom: 15px">Добавить</button></td></tr>
+          <tr id="newlineP" nomer="[0]">
+            <td><input class = "form-control" type="text" name="pointText" autocomplete="off"
+            placeholder ="введите дополнительное предложение" ></td>
+            <td class="btn btn-warning" valign="top" onclick="return rmlineP(0);" style="margin-left: 35px">Удалить</td></tr></table>
+</span><br>
+</div>
+
+    <div class="forma_border">
+      <h5>Видео из ютюб</h5>
+      <textarea style="height: 100px" class = "form-control" type="text" name="video" autocomplete="off"
+      placeholder ="Введите код для вставки видео с ютюб" ></textarea><br>
+    </div>
+
+
+    <div class="forma_border">
+      <h5>Стоимость </h5>
+      <input class = "form-control" type="text" name="price" autocomplete="off"
+      placeholder ="Введите стоимость программы" ><br>
+    </div>
+
+    <div class="forma_border">
+      <h5>Укажите количество детей</h5>
+      <div class="row">
+        <div class="col-xs-1 end-xs">
+          <h6>от</h6>
+        </div>
+        <div class="col-xs-1">
+          <input class = "form-control" type="text" name="count1" autocomplete="off"
+          placeholder ="" >
+        </div>
+        <div class="col-xs-1 end-xs">
+          <h6>до</h6>
+        </div>
+        <div class="col-xs-1">
+            <input class = "form-control" type="text" name="count2" autocomplete="off"
+            placeholder ="" >
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <div class="forma_border">
+      <h5>Время проведения программы в минутах</h5>
+      <input class = "form-control" type="text" name="time" autocomplete="off"
+      placeholder ="Введите время проведения программы в минутах" ><br>
+    </div>
+
+    <div class="row end-xs">
+  <div class="col-xs-4">
+<button class="btn btn-primary" type="submit" style="margin-bottom: 35px"><h5>Выложить программу на сайт</h5></button>
+  </div>
+</div>
+</form>

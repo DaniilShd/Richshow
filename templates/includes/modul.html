@@ -1,0 +1,61 @@
+{{ define "modul" }}
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="form_title_down modal-title" id="staticBackdropLabel">С вами свяжется менеджер</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="/post_information/" class="benefit_search-form" autocomplete="off" id="form_modal">
+                <div class="modal-body">
+
+                    <fieldset class="row benefit_search-form_wrap padding_zero">
+                        <div class="row center-xs middle-xs padding_zero">
+                            <div class="row center-xs padding_zero input_object_modal">
+                                <div class="col-sm-6 col-xs-12 padding_zero middle-xs">
+                                    <input class="modal_search-form_field" type="text" name="name" value="" placeholder="Ваше имя" id="name_modal" required>
+                                </div>
+                                <div class="col-sm-6 col-xs-12 padding_zero middle-xs">
+                                    <input inputmode="numeric" class="modal_search-form_field _tel" type="text" name="tel" value="" placeholder="Номер телефона" id="tel_modal" required>
+                                </div>
+
+                                <input type="hidden" name="utm_source" id="property_utm_source_1">
+                                <input type="hidden" name="utm_medium" id="property_utm_medium_1">
+                                <input type="hidden" name="utm_campaign" id="property_utm_campaign_1">
+                                <input type="hidden" name="utm_content" id="property_utm_content_1">
+                                <input type="hidden" name="utm_term" id="property_utm_term_1">
+
+                            </div>
+                            <div class="row padding_zero">
+                                <div class="col-xs-12 benefit_check">
+                                    <div class="block_check">
+                                        <div class="flex_check">
+                                            <input type="checkbox" onchange="fun_check_modal()" class="form-checkbox" name="form_application" value="yes" id="check_form_modal">
+                                            <label for="check_form_modal"></label>
+                                            <p class="benefit_check_text">Я согласен на обработку персональных данных</p>
+                                        </div>
+                                        
+                                        <p class="benefit_check_text_desc"><a class="benefit_check_text_desc_a" href="/privacy_policy/">Политика конфиденциальности</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="row center-xs">
+                        <div class="col-xs-2 middle-xs">
+                            <img src="/static/img/svg/paper_plane.svg" fill="#fff" class="paper_plane">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal_search-form_submit search-form_submit_active_modal btn btn-secondary display_none" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal_info">Закрыть</button>
+                    <button type="submit" class="modal_search-form_submit search-form_submit_active_modal btn btn-primary" id="modal_button_form" disabled>Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{ end }}

@@ -1,0 +1,61 @@
+ {{ define "redirect" }}
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/flexboxgrid.min.css">
+    <meta name="description" content="Агентство детских праздников Рич Шоу">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/static/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#9f00a7">
+    <meta name="msapplication-config" content="/static/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/css/style.css?v=1.1">
+    <script src="https://kit.fontawesome.com/bfec3f4f59.js" crossorigin="anonymous"></script>
+
+    <title>Агентство детских праздников "Рич Шоу"</title>
+</head>
+
+<body>
+    <div class="wrapper_404">
+        <div class="title_box_404">
+            <div class="title_404">
+                <h1>С Вами свяжется менеджер!</h1>
+            </div>
+        </div>
+        <div class="text_box_404">
+            <div class="text_404">
+                <!--<p>Страница отправки формы</p>-->
+            </div>
+        </div>
+        <div class="row center-xs">
+            <div class="col-xs-offset-3 col-xs-3 center-xs">
+                <button type="button" class="animation_button btn btn-primary" onClick='location.href="{{ .Link }}"'>Назад</button>
+            </div>
+            <div class="col-xs-offset-0 col-xs-6 center-xs">
+                <button type="button" class="animation_button btn btn-primary" onClick='location.href="/"'>
+                    Перейти на главную страницу
+                 </button>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <img src="/static/img/cat_lid.png" alt="Кошка">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+
+</html>
+{{ end }}
