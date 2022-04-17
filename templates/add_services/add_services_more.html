@@ -20,12 +20,12 @@
 
                                 <div class="carousel-item active" data-bs-interval="3500">
 
-                                    <img class="carusel_picture_more" src="/static/img/add_services/{{ .Id }}/{{ .Photo_first }}" class="d-block w-100 pic_animation_more_img" alt="">
+                                    <img class="carusel_picture_more" loading="lazy" src="/static/img/add_services/{{ .Id }}/{{ .Photo_first }}" class="d-block w-100 pic_animation_more_img" alt="">
 
                                 </div>
                                 {{ range .Photo_url_add }}
                                 <div class="carousel-item" data-bs-interval="35000">
-                                    <img class="carusel_picture_more" src="/static/img/add_services/{{ .Id_add }}/{{ .Photo_url }}" class="d-block w-100 pic_animation_more_img" alt="">
+                                    <img class="carusel_picture_more" loading="lazy" src="/static/img/add_services/{{ .Id_add }}/{{ .Photo_url }}" class="d-block w-100 pic_animation_more_img" alt="">
                                 </div>
                                 {{ end }}
 
@@ -47,7 +47,7 @@
                         <div class="table_title_more">
                             <div class="row">
                                 <div class="col-xs-12 name_program_animation text_padding_animation">
-                                    {{ .Name }}
+                                    <h1>{{ .Name }}</h1>
                                 </div>
                             </div>
                             <div class="row">
@@ -140,7 +140,8 @@
                                     <div class="videos">
                                         <div class="video_wrapper">
                                             <div class="video_item">
-                                                <iframe class="video_element" src="{{ .Video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                <iframe class="video_element" src="{{ .Video_url }}"  allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+                                                <!--<iframe class="video_element" src="{{ .Video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                                             </div>
                                         </div>
                                     </div>

@@ -1,0 +1,256 @@
+{{ define "ready_holidays_4_6" }} {{ template "header" }}
+
+<!-- Intro start -->
+<main class="main" data-chapter="6">
+    <section class="intro">
+        <div class="wrapper">
+            <div class="row middle-xs bottom-xs">
+
+                <!-- Форма обратной связи -->
+
+                <div class="hidden_all col-lg-4 col-md-5 col-sm-7 col-xs-12">
+                    <div class="row center-xs">
+                        <form class="search-form" autocomplete="off" id="form">
+                            <fieldset class="search-form_wrap">
+                                <p class="form_title_up">Рассчитать праздник</p>
+                                <div class="search-form_info">
+                                    <div class="input_frame">
+                                        <input class="search-form_field" type="text" name="name" value="" placeholder="Ваше имя" id="name">
+                                        <input class="search-form_field _tel" type="text" name="tel" value="" required placeholder="Номер телефона" id="tel">
+                                    </div>
+                                    <div class="check">
+                                        <div class="politica_check">
+                                            <input type="checkbox" checked="checked" onchange="fun_check()" name="form_application" value="yes" id="check_form_intro">
+                                            <label for="check_form_intro"></label>
+                                            <div class="politica">
+                                                <p class="check_text">Я согласен на обработку персональных данных</p>
+                                                <p class="check_text_desc"><a class="check_text_desc_a" href="!#">Политика конфиденциальности</a></p>
+                                            </div>
+                                        </div>
+                                        <button class="search-form_submit search-form_submit_active" type="submit" name="" id="button_form_intro">Отправить</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="hidden_all col-lg-12 col-md-12 col-xs-12">
+                    <div class="row end-xs">
+                        <div class="feya-pic">
+                            <img src="/static/img/din-din-min.png" alt="Детские шоу">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+    </section>
+
+    <!-- Intro end -->
+
+    <!-- Animation start -->
+
+    <section class="benefits">
+        <div class="benefits_wrapper">
+            <div class="button_green"></div>
+            <div class="button_pink"></div>
+            <h2 class="benefits_title">
+                Готовые праздники
+            </h2>
+            <div class="main_animation_desc">
+                <p class="desc_animation">Стоимость программы указана из расчета на 10 человек и не меняется при уменьшении количества участников</p>
+                <!--
+                <p class="desc_animation">Каждый последующий участник оплачивается + 1000 руб.</p>
+                <p class="desc_animation">Если у вас на празднике до 8 детей, с вами будет 1 аниматор, если детей будет 9 и более - 2 аниматора</p>
+                <p class="desc_animation">Ведение программы англоговорящим ведущим + 2500 руб. к стоимости программы</p>-->
+
+            </div>
+            <div class="benefit_cards">
+
+
+                <!-- Модальное окно с всплывающей формой обратной связи -->
+
+                <!-- Button trigger modal -->
+
+                <!-- Modal -->
+
+                {{ template "modul" }}
+
+
+                <!-- Карточка с анимационной программой #1 -->
+
+                <div class="row padding_zero box_program_holiday">
+                    <div class="col-xs-12 name_ready_holiday center-xs">
+                        В мире мыльных пузырей
+                    </div>
+                    <div class="col-md-6 ">
+
+                        <div class="row padding_zero middle-xs">
+                            <div class="pic_program_container_holiday">
+                                <div id="carouselStockAnimationMore" class="carousel carousel_animation_more slide carousel-fade" data-bs-ride="carousel">
+
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="4000">
+                                            <img src="/static/img/ready_holidays/1.jpg" class="d-block w-100 pic_ready_holiday_img" alt="Готовый праздник на 1,5 часа">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="4000">
+                                            <img src="/static/img/ready_holidays/2.jpg" class="d-block w-100 pic_ready_holiday_img" alt="Готовый праздник на 1,5 часа">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="4000">
+                                            <img src="/static/img/ready_holidays/3.jpg" class="d-block w-100 pic_ready_holiday_img" alt="Готовый праздник на 1,5 часа">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselStockAnimationMore" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselStockAnimationMore" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="text_header_holidays">
+                            <div class="row middle-xs end-xs">
+                                <div class="col-md-6 col-xs-6 flex_price_program_holidays">
+                                    <p class="price_program_holidays">22500&nbsp;<img class="ruble" src="/static/img/svg/ruble.svg" alt=""></p>
+                                </div>
+                                <div class="col-md-5 col-xs-6">
+                                    <p><img class="time_animation_holidays" src="/static/img/svg/carbon_time.svg" alt="">&nbsp;1 ч 35 мин</p>
+                                </div>
+                                <!--
+                                <div class="col-md-4 col-xs-6">
+                                    <p><img class="face_animation" src="/static/img/svg/baby_boy.png" alt="">&nbsp;до 8 детей</p>
+                                </div>
+                            -->
+                                <div class="col-md-1"></div>
+                            </div>
+                        </div>
+
+                        <ul style="list-style: disc" class="list_program">
+                            <li class="li_program_more"><a class="a_program_more" href="/animation_years/2/">Анимация с героем на выбор</a><br>
+                                <div class="time_program">1 час</div>
+                            </li>
+                            <li class="li_program_more">Детское шоу<br>
+                                <div class="time_program">35 минут</div>
+                                <p class="program_list_desc"><a class="a_program_more" href="/show_programs/1/card/5/">"Шоу мыльных пузырей для малышей"</a></p>
+                            </li>
+                        </ul>
+                        <!--
+                        <ul style="list-style: disc" class="list_program">
+                            <li class="li_program_more">Анимация с героем на выбор<br>
+                                <div class="time_program">1 час</div>
+                            </li>
+                            <li class="li_program_more">Детское шоу<br>
+                                <div class="time_program">35 минут</div>
+                                <p class="program_list_desc">"Шоу мыльных пузырей для малышей"</p>
+                            </li>
+                        </ul>
+                    -->
+
+                        <div class="row holiday_button">
+                            <div class="col-xs-12 end-xs">
+                                <button type="button" class="animation_button btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    Заказать
+                                  </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!--
+                    <div class="col-xs-12 end-xs holiday_button">
+                        <div class="blot_time">
+                        <div class="bolt_text">
+                            <div class="bolt_text_vert">
+                                <p>1,5 часа</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                -->
+
+
+
+                </div>
+
+                <!-- Карточка с анимационной программой #1 end-->
+
+            </div>
+
+            <div class="instruction">
+                <div class="instruction_title">
+                    Как заказать праздник
+                </div>
+
+                <div class="row center-xs">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="row center-xs middle-xs">
+                            <div class="col-sm-3 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            1
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Выберите программу
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            2
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Оставьте заявку на сайте
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-xs-12">
+                                <div class="row">
+                                    <div class="flex_pointer">
+                                        <div class="row center-xs middle-xs point_number">
+                                            3
+                                        </div>
+                                        <div class=" row start-xs middle-xs point_text">
+                                            Согласуйте дату и место с менеджером
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kontur">
+                    <div class="kontur_pink"></div>
+                </div>
+            </div>
+
+            {{ template "form_footer" }}
+
+
+
+        </div>
+        <div class="animation_wave">
+            <div class="wave_1"></div>
+            <div class="wave_2"></div>
+        </div>
+    </section>
+
+
+
+    <!-- Animation end -->
+
+</main>
+
+{{ template "footer" }} {{ end }}

@@ -15,16 +15,16 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var DB_CONNECTION_STRING = "Daniil:S_aG@$LmDan37@tcp(80.78.253.5:3306)/richshow"
-var APP_IP = "80.78.253.5"
-var APP_PORT = "8080"
+//var DB_CONNECTION_STRING = "Daniil:S_aG@$LmDan37@tcp(80.78.253.5:3306)/richshow"
+//var APP_IP = "80.78.253.5"
+//var APP_PORT = "8080"
 
 //var CLIENT_NUMBER int16
 
-//var DB_CONNECTION_STRING = "mysql:@tcp(127.0.0.1:3306)/new_richshow"
+var DB_CONNECTION_STRING = "mysql:@tcp(127.0.0.1:3306)/new_richshow"
 
-//var APP_IP = ""
-//var APP_PORT = "8080"
+var APP_IP = ""
+var APP_PORT = "8080"
 
 func index(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/index.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/form_footer.html")
@@ -767,9 +767,17 @@ func show_programs(w http.ResponseWriter, r *http.Request) {
 	type Show_cards struct {
 		Id                                        uint16
 		Name, Short_description, Price, Photo_url string
+		Child_age_range_id string
 	}
 
 	var cards = []Show_cards{}
+
+	vars := mux.Vars(r)
+
+	child_age_range_id, err := strconv.Atoi(vars["child_age"])
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	tmpl, err := template.ParseFiles("templates/show_program/show_program.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/modul.html", "templates/includes/form_footer.html")
 
@@ -784,7 +792,7 @@ func show_programs(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	res, err := db.Query("SELECT `Id`, `name`, `short_description`, `price` FROM `program` WHERE (`category_id` = 2) ORDER BY `sorting`")
+	res, err := db.Query(fmt.Sprintf("SELECT `Id`, `name`, `short_description`, `price`, `child_age_range_id` FROM `program` WHERE `category_id` = 2 AND `child_age_range_id` = %d ORDER BY `sorting`", child_age_range_id))
 	if err != nil {
 		panic(err)
 	}
@@ -793,7 +801,7 @@ func show_programs(w http.ResponseWriter, r *http.Request) {
 	for res.Next() {
 
 		var card Show_cards
-		err = res.Scan(&card.Id, &card.Name, &card.Short_description, &card.Price)
+		err = res.Scan(&card.Id, &card.Name, &card.Short_description, &card.Price, &card.Child_age_range_id)
 		if err != nil {
 			panic(err)
 		}
@@ -816,6 +824,14 @@ func show_programs(w http.ResponseWriter, r *http.Request) {
 
 	
 	tmpl.ExecuteTemplate(w, "show_program", cards) //то что пишешь в шаблоне HTML {{ define "animation_for_year" }}
+}
+
+func show_programs_years(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("templates/show_program/show_programs_years.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/form_footer.html")
+	if err != nil {
+		fmt.Fprintf(w, err.Error())
+	}
+	tmpl.ExecuteTemplate(w, "show_programs_years", nil)
 }
 
 // Страница с карточкой выбранной программы
@@ -949,7 +965,7 @@ func show_program_more(w http.ResponseWriter, r *http.Request) {
 					panic(err)
 				}
 				//log.Print(pt_int.Child_age_range_id)
-				fmt.Print(pt_int.Category_id+"\n")
+				//fmt.Print(pt_int.Category_id+"\n")
 			}
 
 			extra = append(extra, pt_int)
@@ -1830,16 +1846,45 @@ func ready_holidays_1_3(w http.ResponseWriter, r *http.Request) {
 }
 
 func ready_holidays_4_6(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("templates/ready_holidays/ready_holidays_4_6.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/modul.html", "templates/includes/form_footer.html")
 
+	if err != nil {
+		fmt.Fprintf(w, err.Error())
+	}
+
+	tmpl.ExecuteTemplate(w, "ready_holidays_4_6", nil)
 }
 
 func ready_holidays_7_9(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("templates/ready_holidays/ready_holidays_7_9.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/modul.html", "templates/includes/form_footer.html")
 
+	if err != nil {
+		fmt.Fprintf(w, err.Error())
+	}
+
+	tmpl.ExecuteTemplate(w, "ready_holidays_7_9", nil)
 }
 
 func ready_holidays_10_14(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("templates/ready_holidays/ready_holidays_10_14.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/modul.html", "templates/includes/form_footer.html")
 
+	if err != nil {
+		fmt.Fprintf(w, err.Error())
+	}
+
+	tmpl.ExecuteTemplate(w, "ready_holidays_10_14", nil)
 }
+
+func yandex_title(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("templates/page_404/yandex_4f576b017e6c01b9.html")
+
+	if err != nil {
+		fmt.Fprintf(w, err.Error())
+	}
+
+	tmpl.ExecuteTemplate(w, "yandex_title", nil)
+}
+
 
 func ready_holidays_years(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/ready_holidays/ready_holidays_years.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/form_footer.html")
@@ -1874,8 +1919,9 @@ func handleRequest() {
 	rtr.HandleFunc("/animation_years/{child_age}/card/{id:[0-9]+}/", animation_article_more).Methods("GET")
 
 	// Шоу программы
-	rtr.HandleFunc("/show_programs/", show_programs).Methods("GET")
-	rtr.HandleFunc("/show_programs/card/{id:[0-9]+}/", show_program_more).Methods("GET")
+	rtr.HandleFunc("/show_programs/", show_programs_years).Methods("GET")
+	rtr.HandleFunc("/show_programs/{child_age}/", show_programs).Methods("GET")
+	rtr.HandleFunc("/show_programs/{child_age}/card/{id:[0-9]+}/", show_program_more).Methods("GET")
 
 	// Мастер-классы
 	rtr.HandleFunc("/master_class/", master_class_years).Methods("GET")
@@ -1916,10 +1962,12 @@ func handleRequest() {
 	//APP_IP := os.Getenv("APP_IP")
 	//APP_PORT := os.Getenv("APP_PORT")
 
+	rtr.HandleFunc("/yandex_4f576b017e6c01b9.html", yandex_title).Methods("GET")
+
 	//APP_IP := ""
 	//APP_PORT := "8080"
 
-	fmt.Println(APP_IP + ":" + APP_PORT)
+	//fmt.Println(APP_IP + ":" + APP_PORT)
 	http.ListenAndServe(APP_IP+":"+APP_PORT, nil)
 
 	//http.ListenAndServe(":8080", nil)

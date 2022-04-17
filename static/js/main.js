@@ -324,6 +324,25 @@ window.onload = function() {
         localStorage.setItem('term', "");
     }
 
+    function getParameterByName(name) {
+        var name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        var results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    //для заголовка стартовой страницы
+    var title_place = ""
+    title_place = getParameterByName('utm_place');
+
+    //для заголовка где прописываем место, вязтое из utm-метки, если место не указано выводится стандартный title(h1)
+    var main_title = document.querySelector('.intro_title');
+    if (title_place){
+        main_title.innerHTML = `<p>Организуем детские праздники в ` + title_place + `!</p>`
+    }
+    else{
+        main_title.innerHTML = `<p>Организуем детские праздники!</p>`
+    }
+
     if (location.search != "") {
         // Parse the URL
         function getParameterByName(name) {
@@ -338,6 +357,8 @@ window.onload = function() {
         var campaign = getParameterByName('utm_campaign');
         var content = getParameterByName('utm_content');
         var term = getParameterByName('utm_term');
+
+        
 
         localStorage.setItem('source', source);
         localStorage.setItem('medium', medium);
@@ -630,3 +651,21 @@ checkCookies();
 
 
 
+//Закрытие модального видео
+var video = document.querySelector(".richshow_video_src")
+video.src = ""
+(function() {
+    var botton_play = document.querySelector(".video_button")
+    var close_botton_modal = document.querySelectorAll(".button_close_video_richshow")
+    var video = document.querySelector(".richshow_video_src")
+    for (var i = 0; i < close_botton_modal.length; i++) {
+        close_botton_modal[i].addEventListener("click", function() {
+            video.src = "https://vk.com/video_ext.php?oid=-15990965&id=456240200&hash=b6bef27e375c14c1&hd=2"
+        })
+      }
+    botton_play.addEventListener("click", function() {
+        video.src = "https://vk.com/video_ext.php?oid=-15990965&id=456240200&hash=b6bef27e375c14c1&hd=2"
+    })
+}());
+
+//

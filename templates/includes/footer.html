@@ -10,18 +10,19 @@
                         <a href="/"><img src="/static/img/svg/header-logo.png" class="footer_logo-pic" alt="Агентство детских праздников"></a>
                     </div>
                     <div class="logo_text">
-                        <p>Агентство детских праздников<br>"Рич шоу" 2019-2021</p>
+                        <p>Агентство детских праздников<br>"Рич шоу" 2019-2022</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3 col-xs-8 end-xs">
                 <div class="soc_seti">
-                    <!--<a href="https://www.instagram.com/rich_show_msc"><i class="soc_seti_active soc_seti_instagram fab fa-instagram" style="cursor: pointer;"></i></a>&nbsp&nbsp-->
+                    <a href="https://www.instagram.com/rich_show_msc"><i class="soc_seti_active soc_seti_instagram fab fa-instagram" style="cursor: pointer;"></i></a>&nbsp&nbsp
                     <a href="https://t.me/aleksandra_rich"><i class="soc_seti_active soc_seti_telegram fab fa-telegram" style="cursor: pointer;"></i></a>&nbsp&nbsp
-                    <a href="https://api.whatsapp.com/send?phone=79176544174"><i class="soc_seti_active soc_seti_whatsapp fab fa-whatsapp" style="cursor: pointer;"></i></a>&nbsp&nbsp
+                    <a href="https://api.whatsapp.com/send?phone=79196569105"><i class="soc_seti_active soc_seti_whatsapp fab fa-whatsapp" style="cursor: pointer;"></i></a>&nbsp&nbsp
+                    <a href="https://vk.com/rich_show_msc"><i class="soc_seti_active soc_seti_vk fab fa-vk" style="cursor: pointer;"></i></a>&nbsp&nbsp
                 </div>
                 <div class="phone_number_footer">
-                    <a href="tel:+79176544174">+7 917-654-41-74</a>
+                    <a href="tel:+79170650909">+7 917-065-09-09</a>
                 </div>
                 <div class="phone_desc_footer">
                     <p>ежедневно с 9:00 до 23:00</p>
@@ -44,9 +45,85 @@
 <!-- Footer end -->
 
 </body>
+
 <script src="/static/js/main.js"></script>
 <script src="/static/js/baguetteBox.min.js" async></script>
 <script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/swiper-bundle.min.js"></script>
+<script>
+(function() {
+        if (window.innerWidth > 950) {
+            const swiper = new Swiper('.swiper', {
+    // Optional parameters
+
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+})
+    }
+}());
+
+(function() {
+    if (window.innerWidth <= 950) {
+            const swiper = new Swiper('.swiper', {
+    // Optional parameters
+
+    loop: true,
+    slidesPerView: 2,
+    spaceBetween: 30,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+})
+    }
+}());
+(function() {
+    if (window.innerWidth <= 500) {
+            const swiper = new Swiper('.swiper', {
+    // Optional parameters
+
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+})
+    }
+}());
+  </script>
+
+
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>-->

@@ -38,7 +38,7 @@
                 <div class="hidden_all col-lg-12 col-md-12 col-xs-12">
                     <div class="row end-xs">
                         <div class="feya-pic">
-                            <img src="/static/img/din-din-min.png" alt="Детские шоу">
+                            <img loading="lazy" src="/static/img/din-din-min.png" alt="Детские шоу">
                         </div>
                     </div>
 
@@ -86,28 +86,31 @@
                             <div class="col-xs-12 padding_zero">
                                 <div class="row padding_zero">
                                    
-                                    <div class="pic_program_container padding_zero" onclick="document.location='/show_programs/card/{{ .Id }}/'">
+                                    <div class="pic_program_container padding_zero" onclick="document.location='/show_programs/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
                                         <div class="col-xs-12 pic-program">
                                             <img loading="lazy" class="pic-program_img" src="/static/img/show_program/{{ .Id }}/{{ .Photo_url }}" alt="">
                                         </div>
                                     </div>
 
-                                    
-                                    <div class="col-xs-12 center-xs" onclick="document.location='/show_programs/card/{{ .Id }}/'">
+                    
+                                    <div class="col-xs-12 center-xs" onclick="document.location='/show_programs/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
                                         <div class="name_program">
-                                            {{ .Name }}
+                                           <h1>{{ .Name }}</h1> 
                                         </div>
                                     </div>
-                                    <div class="col-xs-12" onclick="document.location='/show_programs/card/{{ .Id }}/'">
+                                    <div class="col-xs-12" onclick="document.location='/show_programs/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
                                         <div class="text_desc_program">
                                             &ensp;&ensp;{{ .Short_description }}
                                         </div>
                                     </div>
-                                
-                                
+                           
+
+
+
+                                <div class="row bottom-xs padding_zero">
                                     <div class="col-xs-12">
                                         
-                                        <div class="row" onclick="document.location='/show_programs/card/{{ .Id }}/'">
+                                        <div class="row" onclick="document.location='/show_programs/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
                                             <div class="col-xs-12 end-xs padding_zero">
                                                 <div class="flex_price_program">
                                                     <p class="price_program ">{{ .Price }}&nbsp;<img class="ruble" src="/static/img/svg/ruble.svg" alt=""></p>
@@ -117,7 +120,7 @@
                                    
                                         <div class="row padding_zero button_group_program center-xs">
                                             <div class="col-xs-6 padding_zero">
-                                                <button type="button" onclick="document.location='/show_programs/card/{{ .Id }}/'" class="animation_button btn btn-primary">
+                                                <button type="button" onclick="document.location='/show_programs/{{ .Child_age_range_id }}/card/{{ .Id }}/'" class="animation_button btn btn-primary">
                              Подробнее
                            </button>
                                             </div>
@@ -128,6 +131,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                               
+
+
+                            
+
+
                                 </div>
                             </div>
                         </div>

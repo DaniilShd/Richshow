@@ -47,7 +47,7 @@
                         <div class="table_title_more">
                             <div class="row">
                                 <div class="col-xs-12 name_program_animation text_padding_animation">
-                                    {{ .Name }}
+                                    <h1>{{ .Name }}</h1>
                                 </div>
                             </div>
                             <div class="row">
@@ -55,10 +55,10 @@
                                     <p>{{ .Price }} руб.</p>
                                 </div>
                                 <div class="col-md-4 col-xs-3 text_padding_animation middle-xs">
-                                    <p><img class="time_animation" src="/static/img/svg/carbon_time.svg" alt="">&nbsp;{{ .Duration }} мин</p>
+                                    <p><img class="time_animation" loading="lazy" src="/static/img/svg/carbon_time.svg" alt="">&nbsp;{{ .Duration }} мин</p>
                                 </div>
                                 <div class="col-md-4 col-xs-6 text_padding_animation">
-                                    <p><img class="face_animation" src="/static/img/svg/baby_boy.png" alt="">&nbsp;от {{ .Child_count_min }} до {{ .Child_count_max }} лет</p>
+                                    <p><img class="face_animation" loading="lazy" src="/static/img/svg/baby_boy.png" alt="">&nbsp;от {{ .Child_count_min }} до {{ .Child_count_max }} лет</p>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +140,8 @@
                                     <div class="videos">
                                         <div class="video_wrapper">
                                             <div class="video_item">
-                                                <iframe class="video_element" src="{{ .Video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                <iframe class="video_element" src="{{ .Video_url }}"  allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+                                                <!--<iframe class="video_element" src="{{ .Video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                                             </div>
                                         </div>
                                     </div>

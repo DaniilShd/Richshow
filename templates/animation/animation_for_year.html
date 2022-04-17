@@ -62,7 +62,7 @@
             </h2>
             <div class="main_animation_desc">
                 <p class="desc_animation">Стоимость программы указана из расчета на 8 человек и не меняется при уменьшении количества участников</p>
-                <p class="desc_animation">Каждый последующий участник оплачивается + 1000 руб.</p>
+                <!--<p class="desc_animation">Каждый последующий участник оплачивается + 1000 руб.</p>-->
                 <p class="desc_animation">Если у вас на празднике до 8 детей, с вами будет 1 аниматор, если детей будет 9 и более - 2 аниматора</p>
                 <p class="desc_animation">Ведение программы англоговорящим аниматором + 2500 руб. к стоимости программы</p>
             </div>
@@ -84,9 +84,9 @@
                     <div class="animation_program col-md-8 col-sm-8 col-xs-12">
                         <div class="row animation_program_title" onclick="document.location='/animation_years/{{ .Child_age_range_id }}/card/{{ .Id }}/'">
                             <div class="animation_name_contain col-md-9 col-sm-7 col-xs-12">
-                                <h3 class="animation_name_program">
+                                <h1 class="animation_name_program">
                                     {{ .Name }}
-                                </h3>
+                                </h1>
                             </div>
                             <div class="animation_time col-md-3 col-sm-5 col-xs-12 end-sm start-xs">
                                 <p class="carbon_time">{{ .Duration }} мин</p>

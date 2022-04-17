@@ -5,7 +5,6 @@
     <section class="benefits margin_top_more">
         <div class="benefits_wrapper">
             <div class="animation_more_card">
-
                 <!-- Модальное окно с всплывающей формой обратной связи -->
 
 
@@ -16,17 +15,17 @@
                 <div class="row middle-sm">
                     <div class="col-md-6 col-sm-6 col-xs-12 padding_zero">
                         <div id="carouselStockAnimationMore" class="carousel carousel_animation_more slide carousel-fade" data-bs-ride="carousel">
-                            <div class="carousel-inner">
+                            <div class="carousel-inner pic-program_carusel">
 
                                 <div class="carousel-item active" data-bs-interval="3500">
 
-                                    <img class="carusel_picture_more" src="/static/img/show_program/{{ .Id }}/{{ .Photo_first }}" class="d-block w-100 pic_animation_more_img" alt="">
+                                    <img class="carusel_picture_more" loading="lazy" src="/static/img/show_program/{{ .Id }}/{{ .Photo_first }}" class="d-block w-100 pic_animation_more_img" alt="">
 
                                 </div>
                                 {{ range .Photo_url_add }}
                                 <div class="carousel-item" data-bs-interval="3500">
 
-                                    <img class="carusel_picture_more" src="/static/img/show_program/{{ .Id_add }}/{{ .Photo_url }}" class="d-block w-100 pic_animation_more_img" alt="">
+                                    <img class="carusel_picture_more" loading="lazy" src="/static/img/show_program/{{ .Id_add }}/{{ .Photo_url }}" class="d-block w-100 pic_animation_more_img" alt="">
 
                                 </div>
                                 {{ end }}
@@ -49,7 +48,7 @@
                         <div class="table_title_more">
                             <div class="row">
                                 <div class="col-xs-12 name_program_animation text_padding_animation">
-                                    {{ .Name }}
+                                    <h1>{{ .Name }}</h1>
                                 </div>
                             </div>
                             <div class="row">
@@ -57,10 +56,10 @@
                                     <p>{{ .Price }} руб.</p>
                                 </div>
                                 <div class="col-md-4 col-xs-3 text_padding_animation middle-xs">
-                                    <p><img class="time_animation" src="/static/img/svg/carbon_time.svg" alt="">&nbsp;{{ .Duration }} мин</p>
+                                    <p><img loading="lazy" class="time_animation" src="/static/img/svg/carbon_time.svg" alt="">&nbsp;{{ .Duration }} мин</p>
                                 </div>
                                 <div class="col-md-4 col-xs-6 text_padding_animation">
-                                    <p><img class="face_animation" src="/static/img/svg/baby_boy.png" alt="">&nbsp;от {{ .Child_count_min }} до {{ .Child_count_max }} лет</p>
+                                    <p><img loading="lazy" class="face_animation" src="/static/img/svg/baby_boy.png" alt="">&nbsp;от {{ .Child_count_min }} до {{ .Child_count_max }} лет</p>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +100,7 @@
                                                 {{ range .Add_service }} {{ if (eq .Category_id "1" ) }}
                                                 <li class="li_animation_more"><a class="extra_services" href="/animation_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "2" ) }}
-                                                <li class="li_animation_more"><a class="extra_services" href="/show_programs/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                <li class="li_animation_more"><a class="extra_services" href="/show_programs/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "3" ) }}
                                                 <li class="li_animation_more"><a class="extra_services" href="/master_class_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "4" ) }}
@@ -126,7 +125,7 @@
                                                 {{ range .Add_service }} {{ if (eq .Category_id "1" ) }}
                                                 <li class="li_animation_more"><a class="extra_services" href="/animation_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "2" ) }}
-                                                <li class="li_animation_more"><a class="extra_services" href="/show_programs/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                <li class="li_animation_more"><a class="extra_services" href="/show_programs/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "3" ) }}
                                                 <li class="li_animation_more"><a class="extra_services" href="/master_class_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "4" ) }} 
@@ -137,13 +136,15 @@
                                             </ul>
                                         </div>
                                     </div>
-
+                                    
                                 </div>
                                 <div class="col-md-6 padding_top_bottom">
                                     <div class="videos">
                                         <div class="video_wrapper">
                                             <div class="video_item">
-                                                <iframe class="video_element" src="{{ .Video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                
+                                                <iframe class="video_element" src="{{ .Video_url }}"  allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+                                                <!--<iframe class="video_element" src="{{ .Video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                                             </div>
                                         </div>
                                     </div>

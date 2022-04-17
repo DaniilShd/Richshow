@@ -105,6 +105,34 @@ a.text_card:active{
     color: #464646;
   }
 
+
+  .swiper {
+    width: 100%;
+    height: 800px;
+    margin: 30px 0px 150px 0px;
+  }
+  
+  .swiper-button-next, .swiper-button-prev{
+      color: var(--color_green)
+  }
+
+  .swiper-pagination-bullet-active{
+      background: var(--color_green);
+  }
+
+.title_swiper {
+    color: var(--color_pink);
+font-size: 2.4em;
+font-weight: 700;
+text-transform: uppercase;
+padding: 30px;
+line-height: 40px;
+width: 100%;
+text-align: center;
+z-index: 1;
+}
+
+
 *,
 *::before,
 *::after {
@@ -330,6 +358,11 @@ body {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.soc_seti_redirect {
+    font-size: 5.0em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 .soc_seti_instagram {
     color: #A741A7;
@@ -341,6 +374,10 @@ body {
 
 .soc_seti_whatsapp {
     color: #25d366;
+}
+
+.soc_seti_vk {
+    color: #0077FF;
 }
 
 .soc_seti_active:hover {
@@ -400,9 +437,25 @@ a[href^="mailto"] {
     visibility: hidden;
     transition: .2s opacity, .2s visibility;
 }
+/*ready holiday start*/
+
+.a_program_more{
+    text-decoration: none;
+    color: #464646;
+}
+
+.a_program_more:hover{
+    text-decoration: none;
+    border-color: var(--color_pink);
+    border: dashed 2px;
+    border-radius: 3px;
+    color: var(--color_green)
+}
 
 
-/*About_us start*/
+/*ready holiday end*/
+
+/*About start*/
 
 .bottom_about_us {
     margin: 60px;
@@ -412,6 +465,8 @@ a[href^="mailto"] {
     width: 1140px;
     margin: 0 auto;
 }
+
+
 
 
 /* .videos_about_us {
@@ -469,7 +524,64 @@ a[href^="mailto"] {
 }
 
 
+.text_about_us {
+    font-family: 'Source Serif Pro';
+    font-size: 1.8em;
+    font-weight: 400;
+    padding: 5px 20px 20px 50px;
+}
+
+
+.botton_play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.botton_play_circle_thin {
+    width: 170px;
+	height: 170px;
+    border: 10px solid var(--color_pink);
+    border-radius: 100px;
+    position: absolute;
+}
+.botton_play_triangle {
+    top: 39px;
+    left: 44px;
+	width: 0;
+height: 0;
+border: 0 solid transparent;
+border-bottom-width: 12px;
+border-top-width: 12px;
+border-left: 20px solid black;
+    position: absolute;
+}
+
+.botton_play_circle {
+    width: 100px;
+	height: 100px;
+	background: yellow;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    position: absolute;
+    -webkit-box-shadow: 0px 0px 39px -3px rgba(0, 172, 150, 0.33) inset;
+-moz-box-shadow: 0px 0px 39px -3px rgba(0, 172, 150, 0.33) inset;
+box-shadow: 0px 0px 39px -3px rgba(0, 172, 150, 0.33) inset;
+transition: 0.3s;
+}
+
+.botton_play_circle:hover {
+    transform: scale(1.08);
+}
+
+
+
+
 /*About_us end*/
+
+
+
 
 
 /*Политика конфиденциальности start*/
@@ -666,8 +778,16 @@ a[href^="mailto"] {
 .title_404 {
     margin-top: 100px;
     margin-bottom: 35px;
-    font-family: 'Summer-Font-Light';
+    font-family: 'Amatic SC';
     font-size: 65px;
+    font-weight: 900;
+}
+
+.title_redirect_desc {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-family: 'Amatic SC';
+    font-size: 35px;
     font-weight: 900;
 }
 
@@ -774,7 +894,7 @@ a[href^="mailto"] {
 .intro_title {
     padding-left: 15px;
     padding-right: 15px;
-    font-family: 'Summer-Font-Light';
+    font-family: 'Amatic SC';
     font-size: 5.8em;
     line-height: 60px;
     color: #7CBD41;
@@ -797,6 +917,45 @@ a[href^="mailto"] {
 
 .feya-pic {
     max-width: 500px;
+    
+}
+
+.feya-div{
+    padding-top: 100px;
+    position: relative;
+}
+
+.cloud_about_us_div {
+    width: 350px;
+    right: 250px;
+    top: -50px;
+    position: absolute;
+}
+
+.cloud_about_us{
+    object-fit: contain;
+
+}
+
+.title_cloud {
+    font-family: 'Source Serif Pro';
+    font-size: 2.2em;
+    font-weight: 600;
+    text-align: left;
+}
+
+.text_cloud{
+    font-family: 'Source Serif Pro';
+    font-size: 1.6em;
+    text-align: left;
+}
+
+.text_cloud_div{
+    width: 200px;
+    height: 150px;
+    right:90px;
+    top: 34px;
+    position: absolute;
 }
 
 .cirk {
@@ -986,7 +1145,7 @@ input:disabled+label:before {
     color: #464646;
     border: dashed 2px;
     border-color: transparent;
-    padding: 0 3px;
+    padding: 0px 3px;
 }
 
 .extra_services:hover {
@@ -1043,13 +1202,22 @@ input:disabled+label:before {
 .name_program_animation {
     font-size: 1.2em;
 }
-
+/*
+.pic-program_img_carusel{
+    height: auto;
+    border-radius: 20px;
+    width: auto;
+    overflow: hidden;
+    align-self:center;
+    align-items:center;
+}*/
 .carusel_picture_more {
     /*min-width: 100%;*/
     max-height: 100%;
     /*width: 100%;*/
     flex-shrink: 0;
     width: 100%;
+    border-radius: 20px;
     object-fit: cover;
 }
 
@@ -1114,7 +1282,7 @@ input:disabled+label:before {
 }
 
 .li_animation_more {
-    margin-top: 3px;
+    margin: 10px 0px;
 }
 
 .animation_button_more {
@@ -1283,7 +1451,7 @@ input:disabled+label:before {
 }
 
 .bolt_text_vert {
-    font-family: 'Summer-Font-Light';
+    font-family: 'Amatic SC';
     font-size: 3em;
     font-weight: 800;
     padding-left: 20px;
@@ -1291,7 +1459,7 @@ input:disabled+label:before {
 
 .box_program_holiday {
     border-radius: 30px;
-    border: 3px dashed var(--color_pink);
+    border: 3px solid var(--color_pink);
     padding: 10px;
     margin-bottom: 30px;
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -1332,7 +1500,7 @@ input:disabled+label:before {
 }
 
 .text_header_holidays {
-    font-family: 'Summer-Font-Light';
+    font-family: 'Amatic SC';
     font-size: 3em;
     font-weight: 800;
     padding-left: 20px;
@@ -1350,9 +1518,9 @@ input:disabled+label:before {
 }
 
 .li_program_more {
-    font-family: 'Summer-Font-Light';
+    font-family: 'Amatic SC';
     font-size: 3em;
-    font-weight: 600;
+    font-weight: 800;
     padding: 0px;
     margin: 15px 0;
 }
@@ -1384,7 +1552,7 @@ input:disabled+label:before {
 }
 
 .name_ready_holiday {
-    font-family: 'Summer-Font-Light';
+    font-family: 'Amatic SC';
     text-transform: uppercase;
     font-size: 3em;
     font-weight: 600;
@@ -1416,8 +1584,8 @@ input:disabled+label:before {
     min-height: 50px;
     margin: 20px;
     background-position: center;
-    height: 100%;
-    max-height: 250px;
+    /*height: 100%;*/
+    max-height: 200px;
     margin-bottom: 5px;
     padding-left: 0px;
     padding-right: 0px;
@@ -1427,6 +1595,23 @@ input:disabled+label:before {
     align-items: center;
     border-radius: 20px;
 }
+
+.pic-program_carusel {
+    min-height: 50px;
+    padding: 20px;
+    /*background-position: center;*/
+    /*height: 100%;*/
+    /*max-height: 400px;*/
+    margin-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+    /*overflow: hidden;*/
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    border-radius: 20px;
+}
+
 
 .pic-program_img {
     height: auto;
@@ -1572,7 +1757,7 @@ input:disabled+label:before {
 }
 
 .benefit_cards {
-    margin: 0px 40px 60px 40px;
+    margin: 0px 40px 100px 40px;
     padding-top: 20px;
 }
 
@@ -2446,6 +2631,50 @@ input:disabled+label:before {
     .benefit_search-form_field {
         width: 140px;
     }
+
+    .text_cloud_div{
+        width: 200px;
+        height: 150px;
+        right:57px;
+        top: 29px;
+        position: absolute;
+    }
+
+    .title_cloud {
+        font-family: 'Source Serif Pro';
+        font-size: 2.0em;
+        font-weight: 600;
+        text-align: left;
+    }
+    
+    .text_cloud{
+        font-family: 'Source Serif Pro';
+        font-size: 1.4em;
+        text-align: left;
+    }
+
+    .cloud_about_us_div {
+        width: 300px;
+        right: 200px;
+        top: -50px;
+        position: absolute;
+    }
+
+    .botton_play_circle_thin {
+        width: 120px;
+        height: 120px;
+        border: 5px solid var(--color_pink);
+
+    }
+    .botton_play_triangle {
+        top: 30px;
+        left: 34px;
+    }
+    
+    .botton_play_circle {
+        width: 80px;
+        height: 80px;
+    }
     /*header start*/
     /*menu burger start*/
     .down_menu {
@@ -2916,6 +3145,11 @@ input:disabled+label:before {
         font-size: 2.6em;
     }
     /*Footer end*/
+
+
+    .hidden_item{
+        display: none;
+    }
     /*Benefits start*/
     .text_box_yaer {
         position: absolute;
@@ -2962,7 +3196,7 @@ input:disabled+label:before {
         border-bottom: 2px solid #F9F9F9;
         margin-right: 20px;
         margin-left: 25px;
-        max-width: 280px;
+        max-width: 240px;
         padding-left: 5px;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -2998,6 +3232,9 @@ input:disabled+label:before {
     /*Animation more start*/
     .table_title_more {
         font-size: 2.2em;
+    }
+    .intro_title {
+        font-size: 4em;
     }
     .time_animation {
         width: 22px;

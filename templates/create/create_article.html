@@ -175,8 +175,10 @@
                   {{ else if (eq .Category "4") }}
                   <option value="{{ .Id }}">{{ .Name }} (10-14)</option>
                   {{ else if (eq .Category "5") }}
-                  <option value="{{ .Id }}">{{ .Name }} (на свадьбу)</option>
+                  <option value="{{ .Id }}">{{ .Name }} Вечеринки</option>
                   {{ else if (eq .Category "6") }}
+                  <option value="{{ .Id }}">{{ .Name }} (на свадьбу)</option>
+                  {{ else if (eq .Category "7") }}
                   <option value="{{ .Id }}">{{ .Name }} (для взрослых)</option>
                   {{ end }}
                   {{ end }}
