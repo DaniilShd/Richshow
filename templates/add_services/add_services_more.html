@@ -98,7 +98,7 @@
                                                 {{ range .Add_service }} {{ if (eq .Category_id "1" ) }}
                                                 <li class="li_animation_more"><a class="extra_services" href="/animation_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "2" ) }}
-                                                <li class="li_animation_more"><a class="extra_services" href="/show_programs/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
+                                                <li class="li_animation_more"><a class="extra_services" href="/show_programs/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "3" ) }}
                                                 <li class="li_animation_more"><a class="extra_services" href="/master_class_years/{{ .Child_age_range_id }}/card/{{ .Extra_services_id }}/">{{ .Name_extra_service }}</a></li>
                                                 {{ else if (eq .Category_id "4" ) }}

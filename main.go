@@ -3,28 +3,31 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"text/template"
 	"io"
 	"log"
 	"net/http"
 	"net/smtp"
 	"os"
 	"strconv"
+	"text/template"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
 )
 
-//var DB_CONNECTION_STRING = "Daniil:S_aG@$LmDan37@tcp(80.78.253.5:3306)/richshow"
-//var APP_IP = "80.78.253.5"
-//var APP_PORT = "8080"
+var DB_CONNECTION_STRING = "DaniilTwo:S_aG@$LmDan38@tcp(185.46.9.112:3306)/richshow"
+var APP_IP = "185.46.9.112"
+var APP_PORT = "8080"
+
+//password for user root:rootroot
 
 //var CLIENT_NUMBER int16
 
-var DB_CONNECTION_STRING = "mysql:@tcp(127.0.0.1:3306)/new_richshow"
+//var DB_CONNECTION_STRING = "root:root@tcp(127.0.0.1:3306)/new_richshow"
 
-var APP_IP = ""
-var APP_PORT = "8080"
+//var APP_IP = ""
+
+// var APP_PORT = "8080"
 
 func index(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/index.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/form_footer.html")
@@ -767,7 +770,7 @@ func show_programs(w http.ResponseWriter, r *http.Request) {
 	type Show_cards struct {
 		Id                                        uint16
 		Name, Short_description, Price, Photo_url string
-		Child_age_range_id string
+		Child_age_range_id                        string
 	}
 
 	var cards = []Show_cards{}
@@ -822,7 +825,6 @@ func show_programs(w http.ResponseWriter, r *http.Request) {
 		cards = append(cards, card)
 	}
 
-	
 	tmpl.ExecuteTemplate(w, "show_program", cards) //то что пишешь в шаблоне HTML {{ define "animation_for_year" }}
 }
 
@@ -1022,7 +1024,7 @@ func master_class(w http.ResponseWriter, r *http.Request) {
 	type Masterclass_card struct {
 		Id                                        uint16
 		Name, Short_description, Price, Photo_url string
-		Child_age_range_id string
+		Child_age_range_id                        string
 	}
 
 	type Masterclass_cards_Category struct {
@@ -1073,7 +1075,6 @@ func master_class(w http.ResponseWriter, r *http.Request) {
 		cards.Masterclass_cards = append(cards.Masterclass_cards, card)
 
 	}
-	
 
 	//log.Print(cards)
 
@@ -1884,7 +1885,6 @@ func yandex_title(w http.ResponseWriter, r *http.Request) {
 
 	tmpl.ExecuteTemplate(w, "yandex_title", nil)
 }
-
 
 func ready_holidays_years(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/ready_holidays/ready_holidays_years.html", "templates/includes/header.html", "templates/includes/footer.html", "templates/includes/form_footer.html")
